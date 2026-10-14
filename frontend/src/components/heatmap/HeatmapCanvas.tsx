@@ -126,14 +126,14 @@ export function Hotspots({ heatmap }: { heatmap: Heatmap }) {
       <h2 id="hotspots-heading" className="mb-2 font-semibold">
         Top click areas
       </h2>
-      <ol className="space-y-1.5">
+      <ol className="space-y-2.5">
         {top.map((cell) => (
-          <li key={`${cell.col}:${cell.row}`} className="flex justify-between gap-3">
-            <span className="font-mono text-xs text-muted tabular-nums">
+          <li key={`${cell.col}:${cell.row}`}>
+            <div className="font-medium tabular-nums">{plural(cell.count, "click")}</div>
+            <div className="font-mono text-xs text-muted tabular-nums">
               x {cell.col * CELL_SIZE * 2} to {(cell.col + 1) * CELL_SIZE * 2}, y {cell.row * CELL_SIZE * 2} to{" "}
               {(cell.row + 1) * CELL_SIZE * 2}
-            </span>
-            <span className="font-medium tabular-nums">{plural(cell.count, "click")}</span>
+            </div>
           </li>
         ))}
       </ol>
