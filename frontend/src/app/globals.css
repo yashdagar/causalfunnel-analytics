@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --surface-muted: #f2f4f7;
+  --surface-hover: #eef2f8;
+  --border: #e6e9ef;
+  --border-strong: #d5dae3;
+  --text: #111827;
+  --text-muted: #5b6474;
+  --text-subtle: #8a93a3;
+  --brand: #2a78d6;
+  --brand-hover: #1c5cab;
+  --brand-soft: #e8f1fc;
+  --brand-text: #1c5cab;
+  --danger: #c4314b;
+  --danger-soft: #fdecef;
+  --dot: #2a78d6;
+  --dot-ring: #ffffff;
+  --shadow-card: 0 1px 2px rgb(16 24 40 / 0.05);
+}
+
+.dark {
+  --bg: #0d1117;
+  --surface: #151b24;
+  --surface-muted: #1b2330;
+  --surface-hover: #212b3a;
+  --border: #253041;
+  --border-strong: #334155;
+  --text: #f2f5f9;
+  --text-muted: #a3adbd;
+  --text-subtle: #7d8899;
+  --brand: #5598e7;
+  --brand-hover: #86b6ef;
+  --brand-soft: #16263d;
+  --brand-text: #86b6ef;
+  --danger: #f2667f;
+  --danger-soft: #3a1720;
+  --dot: #5598e7;
+  --dot-ring: #151b24;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-subtle: var(--text-subtle);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-text: var(--brand-text);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --radius-card: 10px;
+  --shadow-card: var(--shadow-card);
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--brand);
+}
+
+@layer components {
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
