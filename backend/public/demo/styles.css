@@ -1,0 +1,82 @@
+:root {
+  --ink: #1f1a17;
+  --muted: #6b625c;
+  --line: #e7ded6;
+  --paper: #fbf7f3;
+  --card: #ffffff;
+  --accent: #b5532c;
+  --accent-ink: #ffffff;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; line-height: 1.5; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+
+.wrap { width: min(1080px, 100% - 32px); margin: 0 auto; }
+
+header { border-bottom: 1px solid var(--line); background: var(--card); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.brand { font-weight: 800; letter-spacing: -0.02em; text-decoration: none; font-size: 20px; }
+nav { display: flex; gap: 20px; font-size: 15px; }
+nav a { text-decoration: none; color: var(--muted); }
+nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 44px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--ink);
+  background: var(--ink); color: var(--paper); font: inherit; font-weight: 600;
+  text-decoration: none; cursor: pointer;
+}
+.button.secondary { background: transparent; color: var(--ink); }
+.button.accent { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; padding: 72px 0; }
+.hero h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 16px; }
+.hero p { color: var(--muted); font-size: 18px; margin: 0 0 28px; max-width: 46ch; }
+.hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.swatch { aspect-ratio: 4 / 3; border-radius: 24px; background: linear-gradient(135deg, #c96f45, #6f3a22 70%, #2b1a12); }
+
+section { padding: 48px 0; }
+section h2 { font-size: 28px; letter-spacing: -0.02em; margin: 0 0 24px; }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.card .thumb { aspect-ratio: 1; border-radius: 12px; }
+.card h3 { margin: 0; font-size: 18px; }
+.card p { margin: 0; color: var(--muted); font-size: 15px; flex: 1; }
+.card .row { display: flex; align-items: center; justify-content: space-between; }
+.price { font-weight: 700; }
+
+.thumb.a { background: linear-gradient(160deg, #e9c9a8, #a8653f); }
+.thumb.b { background: linear-gradient(160deg, #d8d3c4, #5c6b4f); }
+.thumb.c { background: linear-gradient(160deg, #f0dccb, #7b3f2a); }
+.thumb.d { background: linear-gradient(160deg, #cfd8dc, #37474f); }
+.thumb.e { background: linear-gradient(160deg, #f3e1b6, #a1771f); }
+.thumb.f { background: linear-gradient(160deg, #e2c4c4, #6d2e46); }
+
+.banner { background: var(--ink); color: var(--paper); border-radius: 24px; padding: 40px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.banner h2 { margin: 0 0 8px; }
+.banner p { margin: 0; opacity: 0.75; }
+.banner .button { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+
+form { display: grid; gap: 16px; }
+label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; }
+input, select { height: 44px; border-radius: 10px; border: 1px solid var(--line); padding: 0 12px; font: inherit; background: var(--card); }
+.checkout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: start; }
+.summary { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: grid; gap: 12px; }
+.summary .row { display: flex; justify-content: space-between; }
+.summary .total { border-top: 1px solid var(--line); padding-top: 12px; font-weight: 700; }
+
+footer { border-top: 1px solid var(--line); margin-top: 48px; padding: 32px 0; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+@media (max-width: 760px) {
+  .hero, .checkout { grid-template-columns: 1fr; padding: 40px 0; }
+  .grid { grid-template-columns: 1fr 1fr; }
+  .banner { flex-direction: column; align-items: flex-start; }
+  nav { gap: 12px; }
+}

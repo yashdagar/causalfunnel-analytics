@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checkout · Ember Roasters</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="/tracker.js" async></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <a class="brand" href="./">Ember Roasters</a>
+        <nav>
+          <a href="./">Home</a>
+          <a href="shop.html">Shop</a>
+          <a href="checkout.html" aria-current="page">Cart (2)</a>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">
+      <section>
+        <h2>Checkout</h2>
+        <div class="checkout">
+          <form onsubmit="event.preventDefault()">
+            <label>Email<input type="email" name="email" placeholder="you@example.com" /></label>
+            <label>Full name<input name="name" placeholder="Name on the order" /></label>
+            <label>Address<input name="address" placeholder="Street and house number" /></label>
+            <label>City<input name="city" placeholder="City" /></label>
+            <label>Delivery<select name="delivery"><option>Standard (3 to 5 days)</option><option>Express (next day)</option></select></label>
+            <button class="button accent" type="submit" id="place-order">Place order</button>
+          </form>
+          <aside class="summary">
+            <div class="row"><span>Ethiopia Guji × 1</span><span>₹640</span></div>
+            <div class="row"><span>House Espresso × 1</span><span>₹520</span></div>
+            <div class="row"><span>Shipping</span><span>Free</span></div>
+            <div class="row total"><span>Total</span><span>₹1,160</span></div>
+            <a class="button secondary" href="shop.html">Keep shopping</a>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        <span>Ember Roasters is a demo store for the CausalFunnel tracker.</span>
+        <a href="/demo/">Back to home</a>
+      </div>
+    </footer>
+  </body>
+</html>

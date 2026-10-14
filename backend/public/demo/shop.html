@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shop · Ember Roasters</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="/tracker.js" async></script>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <a class="brand" href="./">Ember Roasters</a>
+        <nav>
+          <a href="./">Home</a>
+          <a href="shop.html" aria-current="page">Shop</a>
+          <a href="checkout.html">Cart (2)</a>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">
+      <section>
+        <h2>All roasts</h2>
+        <form class="filters" style="grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 24px">
+          <label>Roast<select name="roast"><option>Any</option><option>Light</option><option>Medium</option><option>Dark</option></select></label>
+          <label>Grind<select name="grind"><option>Whole bean</option><option>Pour over</option><option>Espresso</option></select></label>
+          <label>Search<input name="q" placeholder="Search roasts" /></label>
+        </form>
+        <div class="grid">
+        <article class="card">
+          <div class="thumb a"></div>
+          <h3>Ethiopia Guji</h3>
+          <p>Bright and floral with notes of jasmine and peach.</p>
+          <div class="row"><span class="price">₹640</span><button class="button secondary" type="button">Add to cart</button></div>
+        </article>
+        <article class="card">
+          <div class="thumb b"></div>
+          <h3>Colombia Huila</h3>
+          <p>Balanced and sweet, caramel up front with a cocoa finish.</p>
+          <div class="row"><span class="price">₹580</span><button class="button secondary" type="button">Add to cart</button></div>
+        </article>
+        <article class="card">
+          <div class="thumb c"></div>
+          <h3>House Espresso</h3>
+          <p>Dark chocolate and molasses. Built for milk drinks.</p>
+          <div class="row"><span class="price">₹520</span><button class="button secondary" type="button">Add to cart</button></div>
+        </article>
+        <article class="card">
+          <div class="thumb d"></div>
+          <h3>Decaf Peru</h3>
+          <p>Swiss water decaf with toffee and almond.</p>
+          <div class="row"><span class="price">₹560</span><button class="button secondary" type="button">Add to cart</button></div>
+        </article>
+        <article class="card">
+          <div class="thumb e"></div>
+          <h3>Kenya Nyeri</h3>
+          <p>Juicy blackcurrant and grapefruit acidity.</p>
+          <div class="row"><span class="price">₹690</span><button class="button secondary" type="button">Add to cart</button></div>
+        </article>
+        <article class="card">
+          <div class="thumb f"></div>
+          <h3>Holiday Blend</h3>
+          <p>Spiced plum and dark cherry. Limited run.</p>
+          <div class="row"><span class="price">₹610</span><button class="button secondary" type="button">Add to cart</button></div>
+        </article>
+        </div>
+      </section>
+      <section>
+        <div class="banner">
+          <div>
+            <h2>Two bags in your cart</h2>
+            <p>Free shipping on orders over ₹999.</p>
+          </div>
+          <a class="button" href="checkout.html" id="go-to-checkout">Go to checkout</a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        <span>Ember Roasters is a demo store for the CausalFunnel tracker.</span>
+        <a href="/demo/">Back to home</a>
+      </div>
+    </footer>
+  </body>
+</html>
