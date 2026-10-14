@@ -21,7 +21,7 @@ export function groupJourney(events: TrackedEvent[]): JourneyStep[] {
 
 export function describeTarget(event: TrackedEvent): string {
   const target = event.target;
-  if (!target) return "Clicked the page";
+  if (!target || ((target.tag === "html" || target.tag === "body") && !target.id)) return "Clicked the page";
   const label = target.text ? `"${target.text}"` : target.id ? `#${target.id}` : null;
   const kind = { a: "link", button: "button", input: "input", select: "select", textarea: "text area" }[target.tag] ?? target.tag;
   return label ? `Clicked ${kind} ${label}` : `Clicked ${kind}`;

@@ -107,6 +107,16 @@ describe("tracker.js", () => {
     expect(events[1].target).toEqual({ tag: "input", text: "Email" });
   });
 
+  it("does not capture page text when the click lands on empty space", async () => {
+    const { window, sent } = load();
+    window.document.querySelector("main")!.append("A long paragraph of page copy ".repeat(10));
+
+    window.document.querySelector("main")!.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+    const events = await sent();
+
+    expect(events[1].target).toEqual({ tag: "main" });
+  });
+
   it("sends events the API accepts", async () => {
     const { window, sent } = load();
 

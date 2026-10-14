@@ -92,12 +92,15 @@
 
   function describe(element) {
     if (!element || !element.tagName) return undefined;
-    var target = (element.closest && element.closest(INTERACTIVE)) || element;
+    var interactive = element.closest && element.closest(INTERACTIVE);
+    var target = interactive || element;
     var tag = target.tagName.toLowerCase();
     var text = /^(input|textarea|select)$/.test(tag)
       ? target.getAttribute("aria-label") || target.getAttribute("placeholder") || target.getAttribute("name")
       : target.getAttribute("aria-label") || target.textContent;
-    text = (text || "").replace(/\s+/g, " ").trim().slice(0, 80);
+    text = (text || "").replace(/\s+/g, " ").trim();
+    if (!interactive && text.length > 80) text = "";
+    text = text.slice(0, 80);
     var description = { tag: tag };
     if (target.id) description.id = target.id.slice(0, 128);
     if (text) description.text = text;
